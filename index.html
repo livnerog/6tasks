@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function randomInteger(min, max) { 
+var rand = min + Math.random() * (max - min);  
+rand = Math.round(rand);
+return rand;
+}
+function createArray(size) {
+var res = [];
+for (var i = 0; i < size; i++) {
+res[i] = [];
+for (var j = 0; j < size; j++) {
+res[i][j] = randomInteger(0, 100);
+}
+}
+return res;
+}
+var arr = createArray(10);
+console.table (arr);
+
+
+var line = Array();
+for (var i = 0; i < 10; i++) {
+for (var j = 0; j < 10; j++){
+line.push(arr[i][j]);
+
+}
+}
+console.log(line);
+console.log(" ");
+var lineh1 = Array();
+var lineh2 = Array();
+var linev1 = Array();
+var linev2 = Array();
+ 	
+	
+	for (var i=0; i<10; i++){
+		lineh1.push(arr[0][i]);
+		lineh2.push(arr[9][i]);
+		linev1.push(arr[i][0]);
+		linev2.push(arr[i][9]);
+			}
+	lineh2.reverse();
+	linev1.reverse();
+	console.log(lineh1);
+	console.log(linev2);
+	console.log(lineh2);
+	console.log(linev1);
+</script>
+</body>
+</html>
